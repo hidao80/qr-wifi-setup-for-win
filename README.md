@@ -9,3 +9,6 @@ Give permission to use the camera and hold it up so that the QR code appears in 
 If the QR code is successfully read, download the batch file for Wifi setup along with the sound effect.
 
 Double-click the downloaded batch file to complete the Wifi connection setup.
+
+## Precautions for use
+Since this script uses a webcam, it will not work without an HTTPS connection.
