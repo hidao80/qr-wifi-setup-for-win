@@ -20,8 +20,12 @@ function stringToArray(str) {
  * @param {string} downloadFileName
  */
 export function downloadFile(content, contentType, downloadFileName) {
+    // Remove existing download links.
+    document.getElementById('#auto_generated_download_link_6e459a0d6f82ac2ae872709097eaf35c')?.remove();;
+
     // Creating Anchor Tags
     const downLoadLink = document.createElement("a");
+    downLoadLink.id = "auto_generated_download_link_6e459a0d6f82ac2ae872709097eaf35c";
 
     // Generate HTML text to download
     const outputData = stringToArray(content);  // Pass byte strings as they are
@@ -29,5 +33,4 @@ export function downloadFile(content, contentType, downloadFileName) {
     downLoadLink.href = URL.createObjectURL(new Blob([new Uint8Array(outputData)], { type: contentType }));
     downLoadLink.dataset.downloadurl = [contentType, downloadFileName, downLoadLink.href].join(":");
     downLoadLink.click();
-//    downLoadLink.remove();
 }
